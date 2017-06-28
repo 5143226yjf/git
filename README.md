@@ -226,5 +226,31 @@ git branch --set-upstream develop origin/develop
      git revert commit （比如：fa042ce57ebbe5bb9c8db709f719cec2c58ee7ff）撤销指定的版本，撤销也会作为一次提交进行保存。
   ```
 
-
-
+##git常用命令3
+```bash
+             git add .   —将代码添加到暂存区
+             git commit -am “注释”    —将代码提交到本地仓库
+             git pull        — 更新所有代码
+             git push      —将当前分支的代码放到远端对应服务器
+             git stash     —方便临时处理bug时随时切换分支而不丢失修改
+             git stash pop — 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。  　　　　　　　　　　  
+                             由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+  　　        git stash list — 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+             git stash clear — 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
+  　　　      git diff  —  查看本地修改内容 （一般用于git add .前检查代码）
+             git branch newBranch  —创建一个新的分支
+             git checkout -b newBranch  —创建并切换到新创建的分支
+             git checkout master — 切换回主分支
+             git branch -d  newBranch   — 删除本地的新建分支
+             git branch -r        — 查看远端所有分支
+    　　　    git branch -a        — 查看所有分支（本地+远程分支）
+             git push origin : jim   — 删除远端 新建的分支
+             git status        —查看当前状态
+             git merge       — 将分支合并到本地
+             git push origin jim — 将本地分支推送到远程
+             git  push - - set-upstream origin jim   — 将新建的分支与远端相关联
+             git checkout —filename   — 回滚改动错误的代码
+             git log    — 查看日志
+             git reset  --hard 版本号    — 本地回滚错误的代码
+             git rebase — 慎用！若当成一种在推送之前清理提交历史的手段，而且仅仅衍合那些尚未公开的提交对（如果衍合那些已经公开的提交对象，并且已经有人基于这些提交对象开展了后续开发工作的话，就会出现麻烦）。
+ ```
